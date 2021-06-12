@@ -1,0 +1,48 @@
+<div class="container">
+    <div>
+        <h2 style="color: navy; margin-top: 1%; margin-bottom: 2%; text-align: center;">{{title}}
+            <p class="lead"></p>
+        </h2>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5" style="margin-left: 30%;">
+                <div class="panel">
+                    <div class="panel-body" style="background-color: lightblue; border-radius: 20px;">
+                        <form style="margin-left: 10%;" #userlogin="ngForm" (ngSubmit)="loginUser()">
+                            <div class="form-group">
+                                <label style="margin-top: 3%; font-size: 16px;"><b>Email</b></label>
+                                <input type="email" class="form-control" style="width: 350px;" name="email"
+                                    #email="ngModel" [class.is-invalid]="email.invalid && email.touched"
+                                    [(ngModel)]="user.email"
+                                    pattern="([A-Za-z0-9\.\-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3})?"
+                                    placeholder="Enter your E-mail.." required />
+                                <small class="text-danger" [class.d-none]="email.valid || email.touched"></small>
+                            </div>
+                            <div class="form-group">
+                                <label style="font-size: 16px;"><b>Password</b></label>
+                                <input type="password" class="form-control" style="width: 350px;" name="pwd"
+                                    [class.is-invalid]="pwd.invalid && pwd.touched" #pwd="ngModel"
+                                    [(ngModel)]="user.pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*).{8,}" minlength="6"
+                                    placeholder="Enter your Password.." required />
+                                <small class="text-danger" [class.d-none]="pwd.valid || pwd.touched"></small>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                  <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                                  <label class="form-check-label" for="dropdownCheck" style="color: black;">
+                                    Remember me
+                                  </label>
+                                </div>
+                              </div>
+                            <button type="submit" class="btn btn-info" style="margin: 10% 0 5% 35%; color: navy;"
+                                [disabled]="userlogin.form.invalid"><b>Sign in</b></button>
+                            <p class="form-notes">Don't have an account?<a
+                                    href="/signup" style="color: navy;">Sign up</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

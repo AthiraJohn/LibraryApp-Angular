@@ -1,0 +1,49 @@
+<div class="container">
+    <div>
+      <h1 style="color: navy; margin-top: 1%; margin-bottom: 2%; text-align: center;">Edit Author
+        <p class="lead"></p>
+      </h1>
+    </div>
+    <form (ngSubmit)="EditAuthor()">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6" style="margin-left: 25%;">
+            <div class="panel">
+              <div class="panel-body" style="background-color: lightblue; border-radius: 20px;">
+                <div class='table-responsive'>
+                  <table class='table' style="margin-top: 60px;">       
+                    <tbody>
+                      <tr>
+                        <td><label style="font-size: 18px;"><b>Title</b></label></td>
+                        <td><input type="text" style="width: 300px;" name="title" [(ngModel)]="authorItem.title"/></td>                  
+                      </tr>  
+                      <tr>
+                        <td><label style="font-size: 18px;"><b>Author</b></label></td>
+                        <td><input type="text" style="width: 300px;" name="author" [(ngModel)]="authorItem.author"/></td>              
+                      </tr>
+                      <tr>
+                        <td><label style="font-size: 18px;"><b>Nationality</b></label></td>
+                        <td><input type="text" style="width: 300px;" name="genre" [(ngModel)]="authorItem.genre"/></td>
+                      </tr> 
+                      <tr>
+                        <td><label style="font-size: 18px;"><b>Description</b></label></td>
+                        <td><input type="text" style="width: 300px;" name="description" [(ngModel)]="authorItem.description"/></td>                  
+                      </tr> 
+                      <tr>
+                        <td><label style="font-size: 18px;"><b>Image</b></label></td>
+                        <td><input type="text" style="width: 300px;" name="image" [(ngModel)]="authorItem.image"/></td>                  
+                      </tr>  
+                      <tr>
+                        <td></td>
+                        <td><button type="submit" class="btn btn-info" style="margin-left: 25%;color: navy;"><b>Update</b></button></td>                  
+                      </tr>             
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
